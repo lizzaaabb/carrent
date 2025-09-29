@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.landing-body {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.landing-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+  z-index: 1;
+}
+
+.landing-content {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  padding: 2rem;
+  max-width: 900px;
+  margin-bottom: 4rem;
+  margin-left: 4rem;
+}
+.landing-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  /* Adjusted shadow */
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45)) 
+          drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+.landing-title::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: blur(12px);
+}
+
+.landing-description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgba(226, 216, 216, 0.95);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  font-style: italic;
+}
+
+.landing-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Glassmorphism Luxury Button - Maximum Performance */
+.button {
+  position: relative;
+  padding: 22px 64px;
+  font-size: 0.875rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  color: #f5f5f5;
+  background: rgba(45, 45, 45, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 100px;
+  cursor: pointer;
+  overflow: hidden;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  isolation: isolate;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.button span {
+  position: relative;
+  z-index: 3;
+  display: block;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 300;
+}
+
+/* Static glass reflection - no animation */
+.button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, transparent 100%);
+  border-radius: 100px 100px 0 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Simple hover - only transform and opacity */
+.button:hover {
+  animation: buttonHover 0.3s ease forwards;
+}
+
+.button:active {
+  animation: buttonPress 0.15s ease forwards;
+}
+
+@keyframes buttonHover {
+  to {
+    transform: translateY(-2px) translateZ(0);
+    filter: brightness(1.1);
+  }
+}
+
+@keyframes buttonPress {
+  to {
+    transform: translateY(0) translateZ(0);
+    filter: brightness(0.95);
+  }
+}
+
+/* Light Glass Variant */
+.button-light {
+  color: #1a1a1a;
+  background: rgba(200, 200, 200, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.button-light span {
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.button-light::after {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
+}
+
+/* Frosted Gold Variant */
+.button-gold {
+  color: #1a1810;
+  background: rgba(200, 180, 130, 0.5);
+  border: 1px solid rgba(220, 200, 150, 0.4);
+}
+
+.button-gold span {
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.button-gold::after {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, transparent 100%);
+}
+
+/* Optional: Add shine on hover only - more performant */
+@media (hover: hover) {
+  .button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.2) 50%, transparent 70%);
+    transform: translateX(-100%) skewX(-20deg);
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .button:hover::before {
+    animation: shine 0.6s ease;
+  }
+  
+  @keyframes shine {
+    to {
+      transform: translateX(200%) skewX(-20deg);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-content {
+    margin-left: 0;
+    margin-bottom: 2rem;
+  }
+
+  .landing-title {
+    font-size: 2.5rem;
+  }
+
+  .landing-description {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  .landing-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-title {
+    font-size: 2rem;
+  }
+
+  .landing-description {
+    font-size: 0.95rem;
+  }
+}
