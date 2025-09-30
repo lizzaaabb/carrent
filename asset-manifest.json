@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/carrent/static/css/main.ea021c2e.css",
-    "main.js": "/carrent/static/js/main.534cc650.js",
+    "main.js": "/carrent/static/js/main.7a0bd0b0.js",
     "static/media/car27.png": "/carrent/static/media/car27.789e41b3f258e6074666.png",
     "static/media/car20.png": "/carrent/static/media/car20.7442788b5cb292f0874b.png",
     "static/media/car2.png": "/carrent/static/media/car2.0e4aea61e2855bc79682.png",
@@ -17,18 +17,38 @@
     "static/media/car15.png": "/carrent/static/media/car15.1056dcb8cec5e1fe1739.png",
     "static/media/car23.png": "/carrent/static/media/car23.039f3fb17cee4f8466b4.png",
     "static/media/car6.png": "/carrent/static/media/car6.02cab440dc852987e321.png",
+    "static/media/galab5.png": "/carrent/static/media/galab5.5bc200220839c0fa1855.png",
     "static/media/car29.png": "/carrent/static/media/car29.8e45fd19831efca6a802.png",
     "static/media/car31.png": "/carrent/static/media/car31.d09eddc0421e1bfb510a.png",
+    "static/media/gald5.png": "/carrent/static/media/gald5.83567f8dd5802beb60e3.png",
+    "static/media/gala1.png": "/carrent/static/media/gala1.6f4f4247c85343685209.png",
+    "static/media/gald2.png": "/carrent/static/media/gald2.4a860e370e154244a5ca.png",
+    "static/media/gala4.png": "/carrent/static/media/gala4.9e21feb3203392267fbd.png",
+    "static/media/gald1.png": "/carrent/static/media/gald1.7380a27efc08c576210f.png",
+    "static/media/gald3.png": "/carrent/static/media/gald3.64af61502e4e24f5d693.png",
     "static/media/car7.png": "/carrent/static/media/car7.2be6e84069925a9efc6c.png",
     "static/media/car16.png": "/carrent/static/media/car16.db28cd1d9ab41132537c.png",
+    "static/media/galab3.png": "/carrent/static/media/galab3.aa52870b2933501ee319.png",
+    "static/media/galab4.png": "/carrent/static/media/galab4.36e8829ecde9df515955.png",
+    "static/media/galc1.png": "/carrent/static/media/galc1.7198f89fe40e503d1865.png",
     "static/media/car30.png": "/carrent/static/media/car30.a8ee67e4fe3701612d40.png",
+    "static/media/galc5.png": "/carrent/static/media/galc5.b406406db9a5213bb3e6.png",
+    "static/media/galab2.png": "/carrent/static/media/galab2.d8ad684940979e64cae6.png",
     "static/media/car14.png": "/carrent/static/media/car14.5d876872fe1f4a7b7c46.png",
+    "static/media/gala2.png": "/carrent/static/media/gala2.0bd9bc5415b2c28a5698.png",
+    "static/media/galab1.png": "/carrent/static/media/galab1.5ec4257db0216c9803cd.png",
+    "static/media/galc2.png": "/carrent/static/media/galc2.44b6cbb2efdd46eb7104.png",
+    "static/media/gala3.png": "/carrent/static/media/gala3.4ac0f90f662fb5c1d411.png",
+    "static/media/galc3.png": "/carrent/static/media/galc3.cc0a03fc3c0039f06b09.png",
     "static/media/car28.png": "/carrent/static/media/car28.41cbd3295713eb109d2d.png",
+    "static/media/galc4.png": "/carrent/static/media/galc4.b1a588c424c4902b7702.png",
     "static/media/car21.png": "/carrent/static/media/car21.c7819208c69c0d7d84f9.png",
     "static/media/car26.png": "/carrent/static/media/car26.87a7f7dbbaa36413d88f.png",
     "static/media/car35.png": "/carrent/static/media/car35.6716912e56e082509442.png",
     "static/media/car32.png": "/carrent/static/media/car32.04ad9cab77fed8eaad4c.png",
     "static/media/car33.png": "/carrent/static/media/car33.be9114ae753ada9d319f.png",
+    "static/media/gala5.png": "/carrent/static/media/gala5.1bb6177c1e42cb646b65.png",
+    "static/media/gald4.png": "/carrent/static/media/gald4.5e9f0f5c72e4f7a271f5.png",
     "static/media/car3.png": "/carrent/static/media/car3.292ce8ef1fb343711478.png",
     "static/media/car5.png": "/carrent/static/media/car5.008f12157d0af6262cc5.png",
     "static/media/car1.png": "/carrent/static/media/car1.bf599a4be60d2414e373.png",
@@ -40,10 +60,10 @@
     "static/media/car12.png": "/carrent/static/media/car12.d3d4f2588659098b7b2e.png",
     "index.html": "/carrent/index.html",
     "main.ea021c2e.css.map": "/carrent/static/css/main.ea021c2e.css.map",
-    "main.534cc650.js.map": "/carrent/static/js/main.534cc650.js.map"
+    "main.7a0bd0b0.js.map": "/carrent/static/js/main.7a0bd0b0.js.map"
   },
   "entrypoints": [
     "static/css/main.ea021c2e.css",
-    "static/js/main.534cc650.js"
+    "static/js/main.7a0bd0b0.js"
   ]
 }
