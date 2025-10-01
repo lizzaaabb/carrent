@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/carrent/static/css/main.9b61853a.css",
-    "main.js": "/carrent/static/js/main.b690945a.js",
+    "main.js": "/carrent/static/js/main.fe5d4362.js",
     "static/media/gale4.png": "/carrent/static/media/gale4.dae4e33294ba967ed383.png",
     "static/media/gale3.png": "/carrent/static/media/gale3.21fd2a22560e6035231e.png",
     "static/media/galm2.png": "/carrent/static/media/galm2.53e53721ed277b05d95e.png",
@@ -69,6 +69,7 @@
     "static/media/gallery30.png": "/carrent/static/media/gallery30.e0a4b6a2ae0a95432413.png",
     "static/media/car31.png": "/carrent/static/media/car31.d09eddc0421e1bfb510a.png",
     "static/media/galf3.png": "/carrent/static/media/galf3.293d386251704769b61e.png",
+    "static/media/mazda.png": "/carrent/static/media/mazda.74f5940ff57c95d54632.png",
     "static/media/gald5.png": "/carrent/static/media/gald5.83567f8dd5802beb60e3.png",
     "static/media/gallery28.png": "/carrent/static/media/gallery28.3a72ef4c74e05512c833.png",
     "static/media/gala1.png": "/carrent/static/media/gala1.6f4f4247c85343685209.png",
@@ -163,10 +164,10 @@
     "static/media/galg2.png": "/carrent/static/media/galg2.7f1f20b6da0069be0b97.png",
     "index.html": "/carrent/index.html",
     "main.9b61853a.css.map": "/carrent/static/css/main.9b61853a.css.map",
-    "main.b690945a.js.map": "/carrent/static/js/main.b690945a.js.map"
+    "main.fe5d4362.js.map": "/carrent/static/js/main.fe5d4362.js.map"
   },
   "entrypoints": [
     "static/css/main.9b61853a.css",
-    "static/js/main.b690945a.js"
+    "static/js/main.fe5d4362.js"
   ]
 }
