@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/carrent/static/css/main.6cd1a551.css",
-    "main.js": "/carrent/static/js/main.44b06c68.js",
+    "main.css": "/carrent/static/css/main.25b9f956.css",
+    "main.js": "/carrent/static/js/main.f9d37f81.js",
     "static/media/gale4.png": "/carrent/static/media/gale4.dae4e33294ba967ed383.png",
     "static/media/gale3.png": "/carrent/static/media/gale3.21fd2a22560e6035231e.png",
     "static/media/galm2.png": "/carrent/static/media/galm2.53e53721ed277b05d95e.png",
@@ -153,18 +153,20 @@
     "static/media/galj3.png": "/carrent/static/media/galj3.bdd1c09daebe9683a424.png",
     "static/media/gall2.png": "/carrent/static/media/gall2.12abd30150ea2b35a6df.png",
     "static/media/galg3.png": "/carrent/static/media/galg3.13ef45e0ef3e67babb67.png",
+    "static/media/telegram.png": "/carrent/static/media/telegram.4737729e1d14d88ca0d7.png",
     "static/media/gals2.png": "/carrent/static/media/gals2.952cc0db68d98466ec41.png",
     "static/media/galo3.png": "/carrent/static/media/galo3.27358491290b4d1287b5.png",
     "static/media/galn3.png": "/carrent/static/media/galn3.d852fb69dd20b6b1bf00.png",
     "static/media/galh3.png": "/carrent/static/media/galh3.72af08dd4d566abb392c.png",
+    "static/media/whatsapp.png": "/carrent/static/media/whatsapp.c75084c4f67a9e4b0ba3.png",
     "static/media/car12.png": "/carrent/static/media/car12.d3d4f2588659098b7b2e.png",
     "static/media/galg2.png": "/carrent/static/media/galg2.7f1f20b6da0069be0b97.png",
     "index.html": "/carrent/index.html",
-    "main.6cd1a551.css.map": "/carrent/static/css/main.6cd1a551.css.map",
-    "main.44b06c68.js.map": "/carrent/static/js/main.44b06c68.js.map"
+    "main.25b9f956.css.map": "/carrent/static/css/main.25b9f956.css.map",
+    "main.f9d37f81.js.map": "/carrent/static/js/main.f9d37f81.js.map"
   },
   "entrypoints": [
-    "static/css/main.6cd1a551.css",
-    "static/js/main.44b06c68.js"
+    "static/css/main.25b9f956.css",
+    "static/js/main.f9d37f81.js"
   ]
 }
