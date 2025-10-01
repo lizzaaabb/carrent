@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/carrent/static/css/main.ea73fa8b.css",
+    "main.css": "/carrent/static/css/main.83a70fdf.css",
     "main.js": "/carrent/static/js/main.f00120fc.js",
     "static/media/gale4.png": "/carrent/static/media/gale4.dae4e33294ba967ed383.png",
     "static/media/gale3.png": "/carrent/static/media/gale3.21fd2a22560e6035231e.png",
@@ -164,11 +164,11 @@
     "static/media/car12.png": "/carrent/static/media/car12.d3d4f2588659098b7b2e.png",
     "static/media/galg2.png": "/carrent/static/media/galg2.7f1f20b6da0069be0b97.png",
     "index.html": "/carrent/index.html",
-    "main.ea73fa8b.css.map": "/carrent/static/css/main.ea73fa8b.css.map",
+    "main.83a70fdf.css.map": "/carrent/static/css/main.83a70fdf.css.map",
     "main.f00120fc.js.map": "/carrent/static/js/main.f00120fc.js.map"
   },
   "entrypoints": [
-    "static/css/main.ea73fa8b.css",
+    "static/css/main.83a70fdf.css",
     "static/js/main.f00120fc.js"
   ]
 }
