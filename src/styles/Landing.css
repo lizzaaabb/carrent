@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+html{
+  background-color: #1a1810;
+}
+
 .landing-body {
   min-height: 100vh;
   width: 100%;
@@ -142,6 +146,8 @@
   animation: buttonPress 0.15s ease forwards;
 }
 
+
+
 @keyframes buttonHover {
   to {
     transform: translateY(-2px) translateZ(0);
@@ -212,7 +218,7 @@
 @media (max-width: 768px) {
   .landing-content {
     margin-left: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 140px;
   }
 
   .landing-title {

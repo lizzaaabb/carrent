@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './styles/Header.css';
 
 function Header() {
@@ -17,9 +18,9 @@ function Header() {
 
         {/* Desktop Navigation */}
         <nav className="nav-desktop">
-          <a href="#home" className="nav-link">Home</a>
-          <a href="#cars" className="nav-link">Cars</a>
-          <a href="#contact" className="nav-link">Contact</a>
+          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/all-cars" className="nav-link">Cars</Link>
+          <Link to="/contact" className="nav-link">Contact</Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -40,9 +41,9 @@ function Header() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <nav className="nav-mobile">
-            <a href="#home" className="nav-link-mobile" onClick={() => setIsMenuOpen(false)}>Home</a>
-            <a href="#cars" className="nav-link-mobile" onClick={() => setIsMenuOpen(false)}>Cars</a>
-            <a href="#contact" className="nav-link-mobile" onClick={() => setIsMenuOpen(false)}>Contact</a>
+            <Link to="/" className="nav-link-mobile" onClick={() => setIsMenuOpen(false)}>Home</Link>
+            <Link to="/all-cars" className="nav-link-mobile" onClick={() => setIsMenuOpen(false)}>Cars</Link>
+            <Link to="/contact" className="nav-link-mobile" onClick={() => setIsMenuOpen(false)}>Contact</Link>
           </nav>
         )}
       </div>

@@ -1,37 +1,125 @@
-// Cars.js
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './styles/Cars.css';
 import { carsData } from './Data';
 
-function Cars() {
-  const [currentPage, setCurrentPage] = useState(1);
-  const carsPerPage = 8; // 2 rows of 4 cars each
+gsap.registerPlugin(ScrollTrigger);
 
-  // Calculate pagination
+function Cars() {
+  const location = useLocation();
+  // Initialize currentPage from location state if returning from CarPage
+  const [currentPage, setCurrentPage] = useState(location.state?.currentPage || 1);
+  const carsPerPage = 8;
+  const carListRef = useRef(null);
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const sectionRef = useRef(null);
+
   const totalPages = Math.ceil(carsData.length / carsPerPage);
   const indexOfLastCar = currentPage * carsPerPage;
   const indexOfFirstCar = indexOfLastCar - carsPerPage;
   const currentCars = carsData.slice(indexOfFirstCar, indexOfLastCar);
 
-  // Change page
+  // Restore scroll position and page when returning from car page
+  useEffect(() => {
+    if (location.state?.scrollPosition !== undefined) {
+      setTimeout(() => {
+        window.scrollTo({ 
+          top: location.state.scrollPosition, 
+          behavior: 'smooth' 
+        });
+      }, 100);
+    }
+  }, [location.state]);
+
+  // Animate on scroll and page change
+  useEffect(() => {
+    const cards = carListRef.current?.querySelectorAll('.car-card-link');
+    
+    if (cards && cards.length > 0) {
+      gsap.fromTo(
+        cards,
+        { opacity: 0, y: 30 },
+        { 
+          opacity: 1, 
+          y: 0, 
+          duration: 0.6, 
+          stagger: 0.1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: carListRef.current,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+    }
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, [currentPage, currentCars]);
+
+  // Animate title on scroll
+  useEffect(() => {
+    gsap.fromTo(
+      titleRef.current,
+      { opacity: 0, y: 30 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 0.7,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+
+    gsap.fromTo(
+      subtitleRef.current,
+      { opacity: 0 },
+      { 
+        opacity: 1, 
+        duration: 0.6,
+        delay: 0.2,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: subtitleRef.current,
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+  }, []);
+
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
-    // Smooth scroll to top of cars section
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // Scroll to cars section using scrollIntoView
+    setTimeout(() => {
+      if (sectionRef.current) {
+        sectionRef.current.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }, 100);
   };
 
-  // Generate page numbers to display
   const getPageNumbers = () => {
     const pageNumbers = [];
     const maxPagesToShow = 5;
 
     if (totalPages <= maxPagesToShow) {
-      // Show all pages if total is less than max
       for (let i = 1; i <= totalPages; i++) {
         pageNumbers.push(i);
       }
     } else {
-      // Show limited pages with ellipsis
       if (currentPage <= 3) {
         for (let i = 1; i <= 4; i++) {
           pageNumbers.push(i);
@@ -58,53 +146,86 @@ function Cars() {
     return pageNumbers;
   };
 
+  const handleCarClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Get consistent scroll position for the cars section
+  const getScrollPosition = () => {
+    if (sectionRef.current) {
+      const rect = sectionRef.current.getBoundingClientRect();
+      return window.pageYOffset + rect.top - 100;
+    }
+    return 800;
+  };
+
   return (
-    <section className="cars-section">
+    <section id="cars-section" ref={sectionRef} className="cars-section">
       <div className="cars-section-container">
-        <h1 className="section-title">
+        <h1 ref={titleRef} className="section-title">
           Explore Our Collection of Cars
         </h1>
-        <span className="section-subtitle">
+        <span ref={subtitleRef} className="section-subtitle">
           Choose your favorite car from our extensive collection.
         </span>
       </div>
 
-      <div className="car-list-container">
+      <div ref={carListRef} className="car-list-container">
         {currentCars.map((car) => (
-          <a href={`/car/${car.id}`} key={car.id} className="car-card-link">
+          <Link 
+            to={`/car/${car.id}`} 
+            key={car.id} 
+            className="car-card-link"
+            state={{ 
+              currentPage, 
+              scrollPosition: getScrollPosition(),
+              fromPath: '/' // <--- LINK 1: The outer link wrapper
+            }}
+            onClick={handleCarClick}
+          >
             <div className="car-card">
               <div className="car-image-wrapper">
                 <img
-                  src={`${process.env.PUBLIC_URL}${car.main_image}`}
+                  src={car.main_image} 
                   alt={car.name}
                   className="car-image"
+                  onError={(e) => {
+                    console.error(`Failed to load image for ${car.name}:`, car.main_image);
+                    e.target.src = `${process.env.PUBLIC_URL}/assets/placeholder.png`; 
+                  }}
                 />
               </div>
               <div className="car-details">
                 <h3 className="car-name">{car.name}</h3>
                 <div className="car-price-block">
                   <span className="price-value">
-                    ${parseFloat(car.price).toFixed(2)}
+                    {parseFloat(car.price).toFixed(2)} $
                   </span>
                   <span className="price-suffix">/ day</span>
                 </div>
-                <button
+                
+                {/* LINK 2: The inner "Rent a Car" button FIX IS HERE */}
+                <Link 
+                  to={`/car/${car.id}`}
                   className="rent-button"
+                  state={{ 
+                    currentPage, 
+                    scrollPosition: getScrollPosition(),
+                    fromPath: '/' // <--- LINK 2: Added missing fromPath
+                  }}
                   onClick={(e) => {
-                    e.preventDefault();
                     e.stopPropagation();
-                    console.log(`Attempting to book ${car.name}`);
+                    handleCarClick();
                   }}
                 >
                   Rent a Car
-                </button>
+                </Link>
               </div>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
 
-      {/* Pagination Controls */}
       {totalPages > 1 && (
         <div className="pagination-container">
           <button

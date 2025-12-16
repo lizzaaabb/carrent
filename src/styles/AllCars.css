@@ -1,0 +1,186 @@
+/* 5 Column Grid Override */
+/* Styles for the new 4-column layout */
+.car-list-four-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 20px; /* adjust spacing */
+}
+
+.section-title2 {
+  padding-top: 90px;
+   font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #2c2c2c;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+  position: relative;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* I
+
+/* Search Bar Styles */
+.search-container {
+  max-width: 600px;
+  margin: 30px auto 40px;
+  position: relative;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 15px 50px 15px 20px;
+  font-size: 1rem;
+  border: 2px solid #ccc;     /* solid gray border */
+  border-radius: 50px;
+  background: #f0f0f0;        /* solid light gray background */
+  color: #333 !important;                /* dark text for readability */
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #a6cad1;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+}
+
+
+
+.clear-search {
+  position: absolute;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #333;
+  font-size: 1.5rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+input{
+    color:#333;
+}
+.clear-search:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Suggestions Dropdown */
+.suggestions-dropdown {
+  position: relative;   /* instead of absolute */
+  margin-top: 10px;
+  left: auto;
+  right: auto;
+  background: rgba(30, 30, 50, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  z-index: 10; /* smaller since it's in-flow */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:hover {
+  background: rgba(0, 212, 255, 0.1);
+}
+
+.suggestion-image {
+  width: 60px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 15px;
+}
+
+.suggestion-details {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.suggestion-name {
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.suggestion-price {
+  color: #00d4ff;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* No Results */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.no-results h3 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.no-results p {
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .car-list-four-columns {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  .car-list-four-columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .car-list-four-columns {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 15px;
+  }
+   .section-title2 {
+    font-size: 2.5rem;
+  }
+
+  .search-container {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .car-list-four-columns {
+    grid-template-columns: 1fr;
+  }
+}
